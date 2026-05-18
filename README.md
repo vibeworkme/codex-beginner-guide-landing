@@ -7,7 +7,7 @@
 - 시간: 3시간
 - 장소: 온라인
 - 참가비: 무료
-- 강사: 박희용, 위브앤 파트너
+- 강사: 위브앤 파트너 그룹
 - 문의: ceo@wilab.co.kr
 - 랜딩 페이지: https://codex-beginner-guide-landing.vercel.app
 
