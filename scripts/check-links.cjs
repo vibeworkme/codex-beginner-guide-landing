@@ -8,7 +8,7 @@ const required = [
   "Codex를 처음 사용하는 사람들을 위한 가이드",
   "2026. 6. 21. 일 · 오후 3시",
   "ceo@wilab.co.kr",
-  "./assets/codex-workshop-hero-impact.png",
+  "./assets/codex-workshop-hero-people.png",
 ];
 
 for (const text of required) {
@@ -17,7 +17,7 @@ for (const text of required) {
   }
 }
 
-const asset = path.join(root, "assets", "codex-workshop-hero-impact.png");
+const asset = path.join(root, "assets", "codex-workshop-hero-people.png");
 if (!fs.existsSync(asset)) {
   throw new Error("Missing hero image. Run npm run build first.");
 }

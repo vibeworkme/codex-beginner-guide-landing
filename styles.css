@@ -222,6 +222,7 @@ dd {
 }
 
 .hero-media {
+  isolation: isolate;
   margin: 0;
   min-width: 0;
   position: relative;
@@ -239,13 +240,169 @@ dd {
 }
 
 .hero-media img {
-  aspect-ratio: 1717 / 916;
+  aspect-ratio: 1672 / 941;
   border: 1px solid rgba(23, 33, 43, 0.12);
   border-radius: 8px;
   box-shadow: var(--shadow-strong);
   object-fit: cover;
   object-position: center;
   width: 100%;
+}
+
+.motion-layer {
+  border-radius: 8px;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+.motion-card {
+  animation: float-card 5.8s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 18px 46px rgba(23, 33, 43, 0.16);
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 18px minmax(44px, 1fr);
+  padding: 10px 12px;
+  position: absolute;
+  width: clamp(86px, 13vw, 136px);
+}
+
+.motion-card i {
+  align-self: center;
+  background: var(--coral);
+  border-radius: 50%;
+  display: block;
+  grid-row: span 2;
+  height: 18px;
+  width: 18px;
+}
+
+.motion-card b {
+  background: rgba(23, 33, 43, 0.24);
+  border-radius: 999px;
+  display: block;
+  height: 6px;
+}
+
+.motion-card b:last-child {
+  width: 64%;
+}
+
+.card-one {
+  left: 13%;
+  top: 13%;
+}
+
+.card-two {
+  animation-delay: -1.8s;
+  right: 12%;
+  top: 11%;
+}
+
+.card-two i {
+  background: var(--green);
+}
+
+.card-three {
+  animation-delay: -3.4s;
+  bottom: 12%;
+  left: 44%;
+}
+
+.card-three i {
+  background: var(--blue);
+}
+
+.motion-path {
+  animation: trace-line 4.8s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(31, 122, 93, 0.78), transparent);
+  border-radius: 999px;
+  height: 3px;
+  position: absolute;
+  transform-origin: left center;
+}
+
+.path-one {
+  --line-rotate: 5deg;
+  left: 24%;
+  top: 29%;
+  width: 28%;
+}
+
+.path-two {
+  --line-rotate: -8deg;
+  animation-delay: -2.2s;
+  bottom: 29%;
+  right: 22%;
+  width: 24%;
+}
+
+.spark {
+  animation: pulse-spark 2.8s ease-in-out infinite;
+  background: var(--gold);
+  border-radius: 999px;
+  box-shadow: 0 0 0 10px rgba(200, 149, 49, 0.16);
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.spark-one {
+  left: 38%;
+  top: 38%;
+}
+
+.spark-two {
+  animation-delay: -0.9s;
+  right: 27%;
+  top: 32%;
+}
+
+.spark-three {
+  animation-delay: -1.7s;
+  bottom: 21%;
+  left: 58%;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes trace-line {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: translateX(-10px) scaleX(0.75) rotate(var(--line-rotate, 0deg));
+  }
+
+  50% {
+    opacity: 0.86;
+    transform: translateX(12px) scaleX(1) rotate(var(--line-rotate, 0deg));
+  }
+}
+
+@keyframes pulse-spark {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
 }
 
 .section {
@@ -441,6 +598,10 @@ dd {
   .hero-media img {
     max-height: 460px;
   }
+
+  .motion-card {
+    width: clamp(82px, 18vw, 124px);
+  }
 }
 
 @media (max-width: 680px) {
@@ -467,6 +628,53 @@ dd {
     aspect-ratio: 4 / 3;
     max-height: 300px;
     object-position: center;
+  }
+
+  .motion-card {
+    gap: 5px;
+    padding: 8px 9px;
+    width: 82px;
+  }
+
+  .motion-card i {
+    height: 14px;
+    width: 14px;
+  }
+
+  .motion-card b {
+    height: 5px;
+  }
+
+  .card-one {
+    left: 7%;
+    top: 11%;
+  }
+
+  .card-two {
+    right: 6%;
+    top: 12%;
+  }
+
+  .card-three {
+    bottom: 13%;
+    left: 38%;
+  }
+
+  .path-one {
+    left: 21%;
+    top: 31%;
+    width: 34%;
+  }
+
+  .path-two {
+    bottom: 29%;
+    right: 14%;
+    width: 30%;
+  }
+
+  .spark {
+    height: 8px;
+    width: 8px;
   }
 
   h1 {
@@ -532,5 +740,13 @@ dd {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-card,
+  .motion-path,
+  .spark {
+    animation: none;
   }
 }
