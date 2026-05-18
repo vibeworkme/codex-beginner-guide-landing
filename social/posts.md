@@ -15,7 +15,7 @@ Codex를 처음 써보고 싶은 분들을 위한 무료 온라인 특강을 엽
 - 참가비: 무료
 - 강사: 박희용, (주)위브앤 대표
 
-신청 링크: [랜딩 페이지 URL]
+신청 링크: https://codex-beginner-guide-landing.vercel.app
 
 ## LinkedIn
 
@@ -30,7 +30,7 @@ Codex를 처음 사용하는 분들을 위한 무료 온라인 특강을 준비�
 
 Codex를 설치했지만 무엇부터 시켜야 할지 막막했던 분, AI 에이전트를 실무 생산성 도구로 활용하고 싶은 분께 추천합니다.
 
-신청 링크: [랜딩 페이지 URL]
+신청 링크: https://codex-beginner-guide-landing.vercel.app
 
 ## Threads
 
@@ -42,4 +42,4 @@ Codex 처음 쓰는 분들을 위한 무료 온라인 특강을 엽니다.
 강사: 박희용, (주)위브앤 대표  
 참가비: 무료
 
-신청 링크: [랜딩 페이지 URL]
+신청 링크: https://codex-beginner-guide-landing.vercel.app

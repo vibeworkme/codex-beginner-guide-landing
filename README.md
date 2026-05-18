@@ -9,6 +9,7 @@
 - 참가비: 무료
 - 강사: 박희용, (주)위브앤 대표
 - 문의: ceo@wilab.co.kr
+- 랜딩 페이지: https://codex-beginner-guide-landing.vercel.app
 
 ## Local
 
