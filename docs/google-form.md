@@ -57,3 +57,20 @@ Codex를 처음 사용하는 사람들을 위한 가이드 특강 신청이 완�
 문의: ceo@wilab.co.kr
 
 감사합니다.
+
+## Apps Script 자동 회신 설치
+
+Google Form의 기본 "응답 사본 전송"과 별개로, 신청자에게 맞춤 접수 완료 메일을 즉시 보내려면 `apps-script-auto-reply.gs`를 Apps Script에 붙여넣고 최초 1회 트리거를 설치한다.
+
+1. Apps Script 편집기 열기
+   - Google Form 편집 화면에서 더보기 -> 스크립트 편집기
+   - 또는 독립형 Apps Script 프로젝트 생성 후 아래 `FORM_ID`가 들어간 스크립트 사용
+2. `docs/apps-script-auto-reply.gs` 전체 내용을 `Code.gs`에 붙여넣기
+3. 프로젝트 이름을 `Codex 특강 자동 회신`처럼 알아보기 쉽게 변경
+4. 함수 선택 메뉴에서 `setupAutoReplyTrigger` 선택
+5. 실행 버튼 클릭
+6. Google 권한 승인
+   - 권한 경고가 나오면 고급 -> 프로젝트로 이동 -> 허용
+7. 실행 로그에 오류가 없으면 설치 완료
+
+설치 후 새 신청이 들어올 때마다 `sendAutoReply`가 실행되어 신청자 이메일로 `[신청 완료] Codex 입문 3시간 온라인 특강` 메일이 발송된다.
