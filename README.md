@@ -11,6 +11,10 @@
 - 문의: ceo@wilab.co.kr
 - 랜딩 페이지: https://codex-beginner-guide-landing.vercel.app
 
+## 강의 범위
+
+이 강의는 VS Code 확장 사용법이 아니라, 로컬에 설치된 Codex 앱을 기준으로 진행합니다.
+
 ## Local
 
 ```bash
