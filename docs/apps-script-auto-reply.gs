@@ -13,6 +13,18 @@ function setupAutoReplyTrigger() {
     .create();
 }
 
+function setupFormEligibilityFields() {
+  const form = FormApp.openById(FORM_ID);
+  form.setDescription(
+    '2026년 6월 21일 일요일 오후 3시, 온라인으로 진행되는 무료 3시간 특강입니다. ' +
+    'ChatGPT 유료 계정 사용과 로컬 Codex 앱 설치 완료를 기본 수강 기준으로 합니다. ' +
+    '신청 완료 후 자동 응답 메일이 발송되며, 온라인 접속 링크는 강의 전 별도 안내됩니다.'
+  );
+
+  ensureRequiredMultipleChoiceItem(form, 'ChatGPT 유료 계정을 사용 중인가요?', ['예', '아니오']);
+  ensureRequiredMultipleChoiceItem(form, '로컬 Codex 앱을 설치했나요?', ['설치 완료', '아직 설치 전']);
+}
+
 function sendAutoReply(e) {
   const namedValues = e.namedValues || {};
   const response = e.response;
@@ -54,6 +66,16 @@ function getAnswer(namedValues, keys) {
   return '';
 }
 
+function ensureRequiredMultipleChoiceItem(form, title, choices) {
+  const exists = form.getItems().some(item => item.getTitle() === title);
+  if (exists) return;
+
+  form.addMultipleChoiceItem()
+    .setTitle(title)
+    .setChoiceValues(choices)
+    .setRequired(true);
+}
+
 function createPlainBody(name) {
   return `
 ${name}님, 안녕하세요.
@@ -65,6 +87,11 @@ Codex를 처음 사용하는 사람들을 위한 가이드 특강 신청이 완�
 - 시간: 3시간
 - 참가비: 무료
 - 강사: 위브앤 파트너 그룹
+
+기본 수강 기준
+- ChatGPT 유료 계정 사용
+- 로컬 Codex 앱 설치 완료
+- 실습할 프로젝트 폴더 준비 권장
 
 온라인 접속 링크는 강의 전 별도 안내드리겠습니다.
 
@@ -87,6 +114,12 @@ function createHtmlBody(name) {
     <li>시간: 3시간</li>
     <li>참가비: 무료</li>
     <li>강사: 위브앤 파트너 그룹</li>
+  </ul>
+  <p><strong>기본 수강 기준</strong></p>
+  <ul style="padding-left:20px">
+    <li>ChatGPT 유료 계정 사용</li>
+    <li>로컬 Codex 앱 설치 완료</li>
+    <li>실습할 프로젝트 폴더 준비 권장</li>
   </ul>
   <p>온라인 접속 링크는 강의 전 별도 안내드리겠습니다.</p>
   <p>문의: <a href="mailto:ceo@wilab.co.kr">ceo@wilab.co.kr</a></p>
