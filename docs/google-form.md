@@ -4,6 +4,10 @@
 
 Codex를 처음 사용하는 사람들을 위한 가이드 신청서
 
+## 공개 URL
+
+https://docs.google.com/forms/d/e/1FAIpQLScvKkqPTDFCi1t5AUZiHIPvEMdBTa37Uj6yAkNSH4xkvyFCGw/viewform?usp=publish-editor
+
 ## 설명
 
 2026년 6월 21일 일요일 오후 3시, 온라인으로 진행되는 무료 3시간 특강입니다. 신청 완료 후 자동 응답 메일이 발송되며, 온라인 접속 링크는 강의 전 별도 안내됩니다.
