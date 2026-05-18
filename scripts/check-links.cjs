@@ -3,20 +3,21 @@ const path = require("path");
 
 const root = path.join(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const plainText = html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
 const required = [
   "Codex를 처음 사용하는 사람들을 위한 가이드",
   "2026. 6. 21. 일 · 오후 3시",
   "ceo@wilab.co.kr",
-  "./assets/codex-workshop-hero.png",
+  "./assets/codex-workshop-hero-impact.png",
 ];
 
 for (const text of required) {
-  if (!html.includes(text)) {
+  if (!html.includes(text) && !plainText.includes(text)) {
     throw new Error(`Missing required text: ${text}`);
   }
 }
 
-const asset = path.join(root, "assets", "codex-workshop-hero.png");
+const asset = path.join(root, "assets", "codex-workshop-hero-impact.png");
 if (!fs.existsSync(asset)) {
   throw new Error("Missing hero image. Run npm run build first.");
 }
