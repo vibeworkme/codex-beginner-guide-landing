@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Codex 입문 3시간 온라인 특강</title>
+    <title>처음 쓰는 Codex 가이드</title>
     <meta
       name="description"
-      content="ChatGPT 유료 계정과 로컬 Codex 앱 설치를 기본 전제로 하는 3시간 온라인 무료 특강. 승인 모드, 실무 프롬프트, 프로젝트 적용 흐름을 함께 익힙니다."
+      content="초보자가 로컬 Codex 앱으로 프로젝트를 읽고, 수정하고, 검증하고, GitHub와 배포까지 이어가는 흐름을 배우는 무료 온라인 가이드입니다."
     />
-    <meta property="og:title" content="Codex 입문 3시간 온라인 특강" />
+    <meta property="og:title" content="처음 쓰는 Codex 가이드" />
     <meta
       property="og:description"
-      content="2026년 6월 21일 오후 3시, 온라인 무료 진행. 위브앤 파트너 그룹이 Codex 첫 사용자를 위한 실전 흐름을 안내합니다."
+      content="2026년 6월 21일 오후 3시, 온라인 무료 진행. 코딩 초보자도 Codex로 실제 작업을 맡기는 법을 따라 배웁니다."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/codex-workshop-hero-people.png" />
@@ -25,7 +25,8 @@
         <span>Codex Guide</span>
       </a>
       <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="#curriculum">커리큘럼</a>
+        <a href="#path">학습 루트</a>
+        <a href="#prompts">프롬프트</a>
         <a href="#who">추천 대상</a>
         <a href="#apply">신청</a>
       </nav>
@@ -36,13 +37,13 @@
         <div class="hero-copy">
           <p class="eyebrow">무료 온라인 특강 · 3시간</p>
           <h1>
-            <span>Codex를 처음 사용하는</span>
-            <span>사람들을 위한 가이드</span>
+            <span>처음 쓰는 사람도</span>
+            <span>Codex로 끝까지 작업하기</span>
           </h1>
           <p class="hero-lead">
-            <span>ChatGPT 유료 계정과 로컬 Codex 앱 설치를 기본값으로,</span>
-            <span>승인 모드, 프로젝트 분석, 실무 프롬프트까지</span>
-            <span>흐름을 한 번에 익힙니다.</span>
+            <span>프로젝트 읽기, 수정 요청, 검증, GitHub 업로드,</span>
+            <span>Vercel 배포까지 초보자가 따라 할 수 있는</span>
+            <span>실무형 흐름으로 익힙니다.</span>
           </p>
           <ul class="baseline-list" aria-label="기본 수강 기준">
             <li>ChatGPT 유료 계정 사용 중</li>
@@ -51,7 +52,7 @@
           </ul>
           <div class="hero-actions" aria-label="주요 행동">
             <a class="button primary" href="#apply">무료 신청하기</a>
-            <a class="button secondary" href="#curriculum">커리큘럼 보기</a>
+            <a class="button secondary" href="#path">학습 루트 보기</a>
           </div>
           <dl class="event-strip" aria-label="강의 정보">
             <div>
@@ -113,6 +114,40 @@
             <span class="feature-kicker">04</span>
             <h3>프로젝트 적용</h3>
             <p>기존 코드 분석, 버그 수정, 랜딩 페이지 제작 같은 실제 업무 예시를 다룹니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section path" id="path" aria-labelledby="path-title">
+        <div class="section-heading">
+          <p class="eyebrow">학습 루트</p>
+          <h2 id="path-title">한 번의 작업을 처음부터 끝까지 경험합니다</h2>
+        </div>
+        <div class="path-board" aria-label="Codex 학습 단계">
+          <article>
+            <span>1</span>
+            <h3>작업 폴더 열기</h3>
+            <p>Codex가 볼 프로젝트 범위를 정하고, 현재 파일 구조와 기술 스택을 먼저 설명하게 합니다.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>작은 변경 요청</h3>
+            <p>문구 수정, 버튼 추가, 모바일 정리처럼 되돌리기 쉬운 작업부터 맡겨 봅니다.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>검증까지 맡기기</h3>
+            <p>빌드, 링크 확인, 화면 확인처럼 결과를 눈으로 확인하는 기준을 함께 세웁니다.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>GitHub에 올리기</h3>
+            <p>변경 파일을 확인하고 커밋, 푸시, PR 또는 저장소 업로드 흐름을 배웁니다.</p>
+          </article>
+          <article>
+            <span>5</span>
+            <h3>Vercel 배포</h3>
+            <p>데이터베이스가 없는 정적 사이트를 빠르게 배포하고 공개 URL을 확인합니다.</p>
           </article>
         </div>
       </section>
@@ -180,6 +215,31 @@
             </div>
           </li>
         </ol>
+      </section>
+
+      <section class="section prompts" id="prompts" aria-labelledby="prompts-title">
+        <div class="section-heading">
+          <p class="eyebrow">바로 쓰는 문장</p>
+          <h2 id="prompts-title">초보자가 복사해서 쓰기 좋은 Codex 요청문</h2>
+        </div>
+        <div class="prompt-grid">
+          <article>
+            <h3>프로젝트 파악</h3>
+            <p>이 프로젝트 구조를 먼저 읽고, 어떤 기술로 만들어졌는지 초보자도 이해할 수 있게 설명해줘. 아직 코드는 수정하지 마.</p>
+          </article>
+          <article>
+            <h3>작은 수정</h3>
+            <p>이 페이지의 문구와 버튼 배치를 더 자연스럽게 다듬어줘. 수정한 파일과 이유를 마지막에 짧게 알려줘.</p>
+          </article>
+          <article>
+            <h3>오류 해결</h3>
+            <p>에러 로그를 보고 원인을 찾아줘. 가능성이 높은 순서대로 설명하고, 가장 작은 수정부터 적용해줘.</p>
+          </article>
+          <article>
+            <h3>배포 준비</h3>
+            <p>데이터베이스가 필요한지 확인하고, 필요 없다면 Vercel에 배포할 수 있게 빌드와 설정을 점검해줘.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section split" id="who" aria-labelledby="who-title">
