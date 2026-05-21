@@ -10,10 +10,15 @@
 - 강사: 위브앤 파트너 그룹
 - 문의: ceo@wilab.co.kr
 - 랜딩 페이지: https://codex-beginner-guide-landing.vercel.app
+- 자습 가이드북: https://codex-beginner-guide-landing.vercel.app/guidebook
 
 ## 강의 범위
 
 이 강의는 VS Code 확장 사용법이 아니라, 로컬에 설치된 Codex 앱을 기준으로 진행합니다. 프로젝트 파악, 작은 수정, 검증, GitHub 업로드, Vercel 배포까지 이어지는 흐름을 다룹니다.
+
+## 자습 가이드북
+
+`guidebook.html`은 방문자가 웹사이트에서 직접 읽고 따라 할 수 있는 자습형 콘텐츠입니다. 준비물, 파일 구조 이해, 수정 요청법, 검증, 배포 흐름, 실습 미션, 복사용 요청문을 포함합니다.
 
 ## 데이터베이스
 

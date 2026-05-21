@@ -432,6 +432,21 @@ dd {
   max-width: 820px;
 }
 
+.section-lead {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+
+.text-link {
+  color: var(--blue);
+  display: inline-flex;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 .path {
   background: #f6efe4;
 }
@@ -662,12 +677,203 @@ dd {
   font-weight: 800;
 }
 
+.guidebook-page {
+  background: #fbf8f2;
+}
+
+.guide-hero {
+  align-items: start;
+  display: grid;
+  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  padding: clamp(54px, 8vw, 112px) clamp(20px, 5vw, 76px) clamp(42px, 6vw, 72px);
+}
+
+.guide-hero > *,
+.guide-summary,
+.guide-content,
+.guide-chapter {
+  min-width: 0;
+}
+
+.guide-summary {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.guide-summary h2 {
+  font-size: 24px;
+}
+
+.guide-summary ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.guide-layout {
+  align-items: start;
+  display: grid;
+  gap: 42px;
+  grid-template-columns: 240px minmax(0, 920px);
+  padding: 0 clamp(20px, 5vw, 76px) clamp(72px, 9vw, 120px);
+}
+
+.guide-toc {
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  position: sticky;
+  top: 92px;
+}
+
+.guide-toc a {
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 10px 12px;
+}
+
+.guide-toc a:hover {
+  background: rgba(34, 103, 168, 0.08);
+  color: var(--ink);
+}
+
+.guide-content {
+  display: grid;
+  gap: 18px;
+}
+
+.guide-chapter {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.guide-chapter h2 {
+  font-size: clamp(28px, 3.8vw, 44px);
+}
+
+.guide-chapter p,
+.guide-summary li,
+.guide-steps li {
+  color: var(--muted);
+}
+
+.chapter-number {
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.guide-checklist {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.guide-checklist label {
+  align-items: center;
+  background: #f6efe4;
+  border: 1px solid rgba(200, 149, 49, 0.22);
+  border-radius: 8px;
+  color: var(--ink);
+  display: flex;
+  font-weight: 800;
+  gap: 10px;
+  padding: 12px 14px;
+  overflow-wrap: anywhere;
+}
+
+.guide-checklist input {
+  accent-color: var(--green);
+  height: 18px;
+  width: 18px;
+}
+
+.example-box {
+  background: #eef3ef;
+  border: 1px solid rgba(31, 122, 93, 0.2);
+  border-radius: 8px;
+  margin-top: 22px;
+  padding: 22px;
+}
+
+.example-box h3 {
+  color: var(--green);
+}
+
+.example-box p,
+.prompt-list p {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.rule-grid,
+.mission-list {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.rule-grid div,
+.mission-list article {
+  background: #fbf8f2;
+  border: 1px solid rgba(23, 33, 43, 0.12);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.guide-steps {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding-left: 22px;
+}
+
+.mission-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.prompt-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.prompt-list p {
+  background: #eef3ef;
+  border-left: 5px solid var(--green);
+  border-radius: 8px;
+  margin: 0;
+  padding: 16px 18px;
+}
+
 @media (max-width: 980px) {
   .hero,
   .split,
   .apply,
-  .instructor {
+  .instructor,
+  .guide-hero,
+  .guide-layout {
     grid-template-columns: 1fr;
+  }
+
+  .guide-toc {
+    position: static;
   }
 
   .hero {
@@ -678,7 +884,9 @@ dd {
 
   .feature-grid,
   .path-board,
-  .prompt-grid {
+  .prompt-grid,
+  .rule-grid,
+  .mission-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -811,8 +1019,52 @@ dd {
   .event-strip,
   .feature-grid,
   .path-board,
-  .prompt-grid {
+  .prompt-grid,
+  .rule-grid,
+  .mission-list {
     grid-template-columns: 1fr;
+  }
+
+  .guide-hero {
+    padding-inline: 16px;
+    padding-top: 42px;
+  }
+
+  .guide-layout {
+    padding-inline: 16px;
+  }
+
+  .guidebook-page .hero-lead,
+  .guide-hero > div,
+  .guide-summary,
+  .guide-toc,
+  .guide-content,
+  .guide-chapter {
+    max-width: calc(100vw - 64px);
+    width: 100%;
+  }
+
+  .guidebook-page h1,
+  .guidebook-page h2,
+  .guidebook-page h3,
+  .guidebook-page p,
+  .guidebook-page li,
+  .guidebook-page label {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .guidebook-page .hero-lead,
+  .guidebook-page .guide-chapter h2 {
+    word-break: break-word;
+  }
+
+  .guidebook-page h1 {
+    font-size: 30px;
+  }
+
+  .guidebook-page .guide-chapter h2 {
+    font-size: 26px;
   }
 
   .event-strip {
